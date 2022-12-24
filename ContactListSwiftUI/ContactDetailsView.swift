@@ -22,7 +22,6 @@ struct ContactDetailsView: View {
                     Image(systemName: "person.fill")
                         .resizable()
                         .frame(width: 150, height: 150)
-                        .clipped()
                     Spacer()
                 }
                 HStack {
