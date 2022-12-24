@@ -9,21 +9,23 @@ import SwiftUI
 
 struct NumbersView: View {
     
-    let contacts = Contact.getContactList()
+    let contacts: [Contact]
     
     var body: some View {
-        List(contacts) { contact in
-            Section(header: Text(contact.fullName)) {
-                Text(contact.phoneNumber)
-                Text(contact.email)
+        NavigationStack {
+            List(contacts) { contact in
+                Section(header: Text(contact.fullName)) {
+                    Text(contact.phoneNumber)
+                    Text(contact.email)
+                }
             }
-            
+            .navigationTitle("Contact List")
         }
     }
 }
 
 struct NumbersView_Previews: PreviewProvider {
     static var previews: some View {
-        NumbersView()
+        NumbersView(contacts: Contact.getContactList())
     }
 }

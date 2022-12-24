@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftUI
 
 struct Contact: Identifiable {
     
@@ -52,37 +51,3 @@ extension Contact {
         return people
     }
 }
-//
-//    static func getContact() -> Contact {
-//        getContact(Int.random(in: 1...11))
-//    }
-    
-//    static func getContact(_ idx: Int) -> Contact {
-//        let names = DataManager.shared.names
-//        let surnames = DataManager.shared.surnames
-//        let phoneNumbers = DataManager.shared.phoneNumbers
-//        let emails = DataManager.shared.emails
-//
-//        let name = names[Int.random(in: 0..<names.count)]
-//        let surname = surnames[Int.random(in: 0..<names.count)]
-//        let phoneNumber = phoneNumbers[Int.random(in: 0..<names.count)]
-//        let email = emails[Int.random(in: 0..<names.count)]
-//
-////        let iterationCount = min(
-////            names.count,
-////            surnames.count,
-////            phoneNumbers.count,
-////            emails.count
-////        )
-//
-//        let contact = Contact(
-//            name: name,
-//            surname: surname,
-//            email: email,
-//            phoneNumber: phoneNumber
-//        )
-//
-//        return contact
-//    }
-//}
-
