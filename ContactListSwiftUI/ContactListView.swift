@@ -7,16 +7,18 @@
 
 import SwiftUI
 
-struct ContactsView: View {
+struct ContactListView: View {
     
     let contacts: [Contact]
     
     var body: some View {
         NavigationStack {
             List(contacts) { contact in
-                NavigationLink(destination: ContactDetailsView(contact: contact)) {
-                    Text(contact.fullName)
-                }
+                NavigationLink(
+                    contact.fullName,
+                    destination: ContactDetailsView(contact: contact)
+                )
+                
             }
             .listStyle(.plain)
             .navigationTitle("Contact List")
@@ -25,8 +27,9 @@ struct ContactsView: View {
 }
 
 
+
 struct ContactListView_Previews: PreviewProvider {
     static var previews: some View {
-        ContactsView(contacts: Contact.getContactList())
+        ContactListView(contacts: Contact.getContactList())
     }
 }

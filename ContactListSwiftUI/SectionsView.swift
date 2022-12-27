@@ -7,16 +7,16 @@
 
 import SwiftUI
 
-struct NumbersView: View {
+struct SectionsView: View {
     
     let contacts: [Contact]
     
     var body: some View {
         NavigationStack {
             List(contacts) { contact in
-                Section(header: Text(contact.fullName)) {
-                    Text(contact.phoneNumber)
-                    Text(contact.email)
+                Section(header: Text(contact.fullName).font(.headline)) {
+                    Label(contact.phoneNumber, systemImage: "phone")
+                    Label(contact.email, systemImage: "tray")
                 }
             }
             .navigationTitle("Contact List")
@@ -26,6 +26,6 @@ struct NumbersView: View {
 
 struct NumbersView_Previews: PreviewProvider {
     static var previews: some View {
-        NumbersView(contacts: Contact.getContactList())
+        SectionsView(contacts: Contact.getContactList())
     }
 }

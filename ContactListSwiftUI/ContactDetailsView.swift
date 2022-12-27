@@ -8,35 +8,24 @@
 import SwiftUI
 
 struct ContactDetailsView: View {
+    
     let contact: Contact
     
     var body: some View {
-        VStack {
-            Text(contact.fullName)
-                .font(.largeTitle)
-                .bold()
-            
-            List {
-                HStack {
-                    Spacer()
-                    Image(systemName: "person.fill")
-                        .resizable()
-                        .frame(width: 150, height: 150)
-                    Spacer()
-                }
-                HStack {
-                    Text("Phone")
-                    Spacer()
-                    Text(contact.phoneNumber)
-                }
-                
-                HStack {
-                    Text("Email")
-                    Spacer()
-                    Text(contact.email)
-                }
+        List {
+            HStack {
+                Spacer()
+                Image(systemName: "person.fill")
+                    .resizable()
+                    .frame(width: 150, height: 150)
+                    .padding()
+                Spacer()
             }
+            
+            Label(contact.phoneNumber, systemImage: "phone")
+            Label(contact.email, systemImage: "tray")
         }
+        .navigationTitle(contact.fullName)
     }
 }
 

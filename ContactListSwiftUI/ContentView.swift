@@ -9,17 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let contacts = Contact.getContactList()
+    private let contacts = Contact.getContactList()
     
     var body: some View {
         TabView {
-            ContactsView(contacts: contacts)
+            ContactListView(contacts: contacts)
                 .tabItem {
                     Image(systemName: "person.3.fill")
                     Text("Contacts")
                 }
             
-            NumbersView(contacts: contacts)
+            SectionsView(contacts: contacts)
                 .tabItem {
                     Image(systemName: "phone.fill")
                     Text("Numbers")
